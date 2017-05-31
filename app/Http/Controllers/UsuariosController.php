@@ -119,6 +119,7 @@ class UsuariosController extends Controller
       $proveedor->save();
 
       //Una vez que guarda regresa al inicio, o puede redireccionar donde estan todos los proveedores
+      //poniendo el redireccionamiento a ver todos los proveedores
       return Redirect('/verProveedores');
     }
 
