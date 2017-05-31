@@ -10,6 +10,7 @@
         <div class="col-md-12">
             <div class="well well-sm">
             Reporte de Productos
+            <!--Agregar aqui para imprimir el pdf-->
         <a href="{{url('')}}">
         <span class="glyphicon glyphicon-file" aria-hidden="true"></span>
         </a>

@@ -46,7 +46,7 @@
                         <div class="form-group">
                             <div class="col-md-12 text-center">
                                 <button type="submit" class="btn btn-primary btn-lg">Agregar</button>
-                                <a href="{{url('/')}}" class="btn btn-danger btn-lg">Cancelar</a>
+                                <a href="{{url('/verProveedores')}}" class="btn btn-danger btn-lg">Cancelar</a>
                             </div>
                         </div>
                     </fieldset>
