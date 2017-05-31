@@ -23,6 +23,7 @@
                         <div class="form-group">
                             <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-list-alt"></i>></span>
                             <div class="col-md-8">
+                            <!-- Pegando forma de enviar la descripcion del producto-->
                                 <input id="descripcion" name="descripcion" type="text" value="{{$producto->descripcion}}" class="form-control">
                             </div>
                         </div>
