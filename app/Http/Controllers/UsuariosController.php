@@ -123,6 +123,30 @@ class UsuariosController extends Controller
       return Redirect('/verProveedores');
     }
 
+    public function eliminarProveedor($id){
+      $proveedor=Proveedor::find($id);
+      $proveedor->delete();
+      return Redirect('/verProveedores');
+    }
+
+    public function editarProveedor($id){
+      $proveedor=Proveedor::find($id);
+      return view('proveedores.editarProveedor',compact('proveedor'));
+    }
+
+
+    public function actualizarProveedor(Request $datos, $id){
+      $proveedor=Proveedor::find($id);
+      $proveedor->nombre=$datos->input('nombre');
+      $proveedor->direccion=$datos->input('direccion');
+      $proveedor->telefono=$datos->input('telefono');
+      $proveedor->email_empresa=$datos->input('email_empresa');
+      $proveedor->save();
+
+      //Una vez que guarda regresa al inicio, o puede redireccionar donde estan todos los proveedores
+      return Redirect('/verProveedores');
+    }
+
 
 
 
