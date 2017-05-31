@@ -62,6 +62,7 @@
           <td>
            <!-- Modificacion del icono para editar-->
           <a href="{{url('/editarProducto')}}/{{$p->id}}" class="btn btn-xs btn-primary">
+           <!-- Cambiar forma del icono editar-->
             <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
           </a>
            <!-- Modificacion del icono para eliminar, y forma de mandarse con modal para mensaje-->
