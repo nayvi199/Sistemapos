@@ -66,6 +66,7 @@
           </a>
            <!-- Modificacion del icono para eliminar, y forma de mandarse con modal para mensaje-->
           <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#modal{{$p->id}}">
+          <!-- Cambiar forma del icono remove-->
             <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
           </button>
          </td>
