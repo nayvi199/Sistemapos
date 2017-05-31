@@ -54,6 +54,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('verProductos', 'UsuariosController@verProductos');
     Route::get('verProveedores', 'UsuariosController@verProveedores');
 
+    Route::post('/agregarProducto', 'UsuariosController@agregarProducto');
+    Route::get('/registrarProducto', 'UsuariosController@registrarProducto');
+
 
 
 
