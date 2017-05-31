@@ -56,7 +56,8 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::post('/agregarProducto', 'UsuariosController@agregarProducto');
     Route::get('/registrarProducto', 'UsuariosController@registrarProducto');
-    
+
+    //cambiando la forma de routa, mandando id
     Route::get('editarProducto/{id}', 'UsuariosController@editarProducto');
     Route::get('/eliminarProducto/{id}', 'UsuariosController@eliminarProducto'); 
 
