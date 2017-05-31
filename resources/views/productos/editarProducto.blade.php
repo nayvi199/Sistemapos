@@ -64,6 +64,7 @@
 
                         <div class="form-group">
                             <div class="col-md-12 text-center">
+                            <!--Cambiando forma de los iconos, editar y cancelar para redireccion-->
                                 <button type="submit" class="btn btn-primary btn-lg">Editar</button>
                                 <a href="{{url('/verProductos')}}" class="btn btn-danger btn-lg">Cancelar</a>
                             </div>
