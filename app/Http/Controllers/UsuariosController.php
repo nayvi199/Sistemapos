@@ -62,6 +62,23 @@ class UsuariosController extends Controller
       return Redirect('/verProductos');
     }
 
+    public function editarProducto($id){
+      $producto=Producto::find($id);
+      return view('productos.editarProducto',compact('producto'));
+    }
+
+      public function actualizarProducto(Request $datos, $id){
+      $producto=Producto::find($id);
+      $producto->nombre=$datos->input('nombre');
+      $producto->descripcion=$datos->input('descripcion');
+      $producto->precio=$datos->input('precio');
+      $producto->id_pro=$datos->input('id_pro');
+      $producto->save();
+
+      //Una vez que guarda regresa al inicio, o puede redireccionar donde estan todos los proveedores
+      return Redirect('/verProductos');
+    }
+
 /*
 //crear las relaciones para ver por nombre
          public function use_rol($id){
