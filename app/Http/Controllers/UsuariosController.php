@@ -21,12 +21,13 @@ class UsuariosController extends Controller
   return view("ventas.verVentas");
  }
 
-  /* public function verCancelaciones()
+ 
+  public function verCancelaciones()
  {
   //aqui pones la ventana que sea 
   //es la carpeta.nombredevista
   return view("cancelaciones.verCancelaciones");
- }*/
+ }
 
   public function verProductos()
  {
@@ -40,59 +41,19 @@ class UsuariosController extends Controller
     //return view("proveedores.verProveedores");
   return view("productos.verProductos",compact('productos'));
  }
- public function registrarProducto(){
-      return view('productos.registrarProducto');
-    }
+  /*public function verProductos()
+ {
+   //aqui pones la ventana que sea 
+    //es la carpeta.nombredevista
 
-     public function agregarProducto(Request $datos){
-      $producto= new Producto();
-      $producto->nombre=$datos->input('nombre');
-      $producto->descripcion=$datos->input('descripcion');
-      $producto->precio=$datos->input('precio');
-      $producto->id_pro=$datos->input('id_pro');
-      $producto->save();
+    $productos=DB::table('productos')
+    ->select('productos.*')
+    ->paginate(10);
+    //return view("proveedores.verProveedores");
+  return view("productos.verProductos",compact('productos'));
+ }*/
 
-      //Una vez que guarda regresa al inicio, o puede redireccionar donde estan todos los proveedores
-      return Redirect('/verProductos');
-    }
 
-     public function eliminarProducto($id){
-      $producto=Producto::find($id);
-      $producto->delete();
-      return Redirect('/verProductos');
-    }
-
-    public function editarProducto($id){
-      $producto=Producto::find($id);
-      return view('productos.editarProducto',compact('producto'));
-    }
-
-      public function actualizarProducto(Request $datos, $id){
-      $producto=Producto::find($id);
-      $producto->nombre=$datos->input('nombre');
-      $producto->descripcion=$datos->input('descripcion');
-      $producto->precio=$datos->input('precio');
-      $producto->id_pro=$datos->input('id_pro');
-      $producto->save();
-
-      //Una vez que guarda regresa al inicio, o puede redireccionar donde estan todos los proveedores
-      return Redirect('/verProductos');
-    }
-
-/*
-//crear las relaciones para ver por nombre
-         public function use_rol($id){
-         $use_rol = DB::table('role_user')
-        ->join('user', 'role_user.role_id','=','users.id')
-        ->join('roles', 'role_user.user_id','=','roles.id')
-        ->select('role_user.role_id as id_role', 'role_user.user_id as id_user' ,'roles.slug as nombre_slug')
-        ->where('role_user.user_id',$id)
-        ->get();
-        //oh layouts/slidder
-        return view('home', compact('use_rol'));
-        }*/
-
-/*Creando seccion de proveedor*/
   public function verProveedores()
  {
     //aqui pones la ventana que sea 
@@ -105,7 +66,8 @@ class UsuariosController extends Controller
     //return view("proveedores.verProveedores");
  }
 
- public function registrarProveedor(){
+
+    public function registrarProveedor(){
       return view('proveedores.registrarProveedor');
     }
 
@@ -119,7 +81,6 @@ class UsuariosController extends Controller
       $proveedor->save();
 
       //Una vez que guarda regresa al inicio, o puede redireccionar donde estan todos los proveedores
-      //poniendo el redireccionamiento a ver todos los proveedores
       return Redirect('/verProveedores');
     }
 
@@ -146,6 +107,71 @@ class UsuariosController extends Controller
       //Una vez que guarda regresa al inicio, o puede redireccionar donde estan todos los proveedores
       return Redirect('/verProveedores');
     }
+
+     public function registrarProducto(){
+      return view('productos.registrarProducto');
+    }
+    public function agregarProducto(Request $datos){
+      $producto= new Producto();
+      $producto->nombre=$datos->input('nombre');
+      $producto->descripcion=$datos->input('descripcion');
+      $producto->precio=$datos->input('precio');
+      $producto->id_pro=$datos->input('id_pro');
+      $producto->save();
+
+      //Una vez que guarda regresa al inicio, o puede redireccionar donde estan todos los proveedores
+      return Redirect('/verProductos');
+    }
+
+    public function eliminarProducto($id){
+      $producto=Producto::find($id);
+      $producto->delete();
+      return Redirect('/verProductos');
+    }
+
+    public function editarProducto($id){
+      $producto=Producto::find($id);
+      return view('productos.editarProducto',compact('producto'));
+    }
+
+      public function actualizarProducto(Request $datos, $id){
+      $producto=Producto::find($id);
+      $producto->nombre=$datos->input('nombre');
+      $producto->descripcion=$datos->input('descripcion');
+      $producto->precio=$datos->input('precio');
+      $producto->id_pro=$datos->input('id_pro');
+      $producto->save();
+
+      //Una vez que guarda regresa al inicio, o puede redireccionar donde estan todos los proveedores
+      return Redirect('/verProductos');
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+//crear las relaciones para ver por nombre
+         public function use_rol($id){
+         $use_rol = DB::table('role_user')
+        ->join('user', 'role_user.role_id','=','users.id')
+        ->join('roles', 'role_user.user_id','=','roles.id')
+        ->select('role_user.role_id as id_role', 'role_user.user_id as id_user' ,'roles.slug as nombre_slug')
+        ->where('role_user.user_id',$id)
+        ->get();
+        //oh layouts/slidder
+        return view('home', compact('use_rol'));
+        }*/
 
 
 
@@ -324,12 +350,11 @@ public function buscar_usuario(Request $request){
 	return view('listados.listado_usuarios')->with("usuarios",$usuarios);
       }
 
-        public function buscar_producto(Request $request){
-          /*Cambiado la forma de llamarse y buscar en referencia*/
+  public function buscar_producto(Request $request){
   $dato=$request->input("dato_buscado");
   $productos=Producto::where("nombre","like","%".$dato."%")->orwhere("descripcion","like","%".$dato."%")                                              ->paginate(10);
   return view('productos.verProductos')->with("productos",$productos);
-      }  
+      }    
 
 
 
