@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('htmlheader_title')
-	Editar informacion del Proveedor
+	Editar informacion del Producto
 @endsection
 
 @section('main-content')
