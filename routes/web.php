@@ -59,6 +59,7 @@ Route::group(['middleware' => 'auth'], function () {
 
     //cambiando la forma de routa, mandando id
     Route::get('editarProducto/{id}', 'UsuariosController@editarProducto');
+    //cambiando la forma de routa, mandando id de eliminar producto
     Route::get('/eliminarProducto/{id}', 'UsuariosController@eliminarProducto'); 
 
 
