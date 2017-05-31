@@ -36,7 +36,7 @@
    
 
  
-  <p>A continuacion se presenta la lista y informacion de los productos que estan en nuestra tienda en lineaa.</p>
+  <p>A continuacion se presenta la lista y informacion de los productos que estan en nuestra tienda en linea.</p>
     
   <table class="table">
     <thead>
