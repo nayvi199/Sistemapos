@@ -48,8 +48,10 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('form_borrado_usuario/{idusu}', 'UsuariosController@form_borrado_usuario');
     Route::get('borrar_rol/{idrol}', 'UsuariosController@borrar_rol');
 
+  
     //Para las ventas, aqui van las cancelaciones tambien 
     Route::get('verVentas', 'UsuariosController@verVentas');
+    Route::get('verProductos', 'UsuariosController@verProductos');
 
 
 
