@@ -49,23 +49,29 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('borrar_rol/{idrol}', 'UsuariosController@borrar_rol');
 
   
-    //Para las ventas, aqui van las cancelaciones tambien 
+    //Para las ventas,productos, proveedores, aqui van las vistas principales
     Route::get('verVentas', 'UsuariosController@verVentas');
     Route::get('verProductos', 'UsuariosController@verProductos');
     Route::get('verProveedores', 'UsuariosController@verProveedores');
 
+    //aqui se muestra la pantalla para agregar
+    Route::post('/agregarProveedor', 'UsuariosController@agregarProveedor');
+    Route::get('/registrarProveedor', 'UsuariosController@registrarProveedor');
+    Route::get('editarProveedor/{id}', 'UsuariosController@editarProveedor');
+    Route::get('/eliminarProveedor/{id}', 'UsuariosController@eliminarProveedor'); 
+    Route::post('actualizarProveedor/{id}', 'UsuariosController@actualizarProveedor'); 
+
+    //para los productos
     Route::post('/agregarProducto', 'UsuariosController@agregarProducto');
     Route::get('/registrarProducto', 'UsuariosController@registrarProducto');
-
-    //cambiando la forma de routa, mandando id
     Route::get('editarProducto/{id}', 'UsuariosController@editarProducto');
-    //cambiando la forma de routa, mandando id de eliminar producto
     Route::get('/eliminarProducto/{id}', 'UsuariosController@eliminarProducto'); 
+    Route::post('actualizarProducto/{id}', 'UsuariosController@actualizarProducto');
 
 
+    //para las cancelaciones
 
-
-    //Para los productos
+    Route::get('/verCancelaciones', 'UsuariosController@verCancelaciones');
 
 
     //Para los proveedores
