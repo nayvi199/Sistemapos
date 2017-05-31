@@ -40,6 +40,9 @@ class UsuariosController extends Controller
     //return view("proveedores.verProveedores");
   return view("productos.verProductos",compact('productos'));
  }
+ public function registrarProducto(){
+      return view('productos.registrarProducto');
+    }
 
 /*
 //crear las relaciones para ver por nombre
