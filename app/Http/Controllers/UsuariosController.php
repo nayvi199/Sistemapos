@@ -211,6 +211,12 @@ public function buscar_usuario(Request $request){
 	return view('listados.listado_usuarios')->with("usuarios",$usuarios);
       }
 
+        public function buscar_producto(Request $request){
+  $dato=$request->input("dato_buscado");
+  $productos=Producto::where("nombre","like","%".$dato."%")->orwhere("descripcion","like","%".$dato."%")                                              ->paginate(10);
+  return view('productos.verProductos')->with("productos",$productos);
+      }  
+
 
 
 
