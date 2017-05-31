@@ -105,6 +105,24 @@ class UsuariosController extends Controller
     //return view("proveedores.verProveedores");
  }
 
+ public function registrarProveedor(){
+      return view('proveedores.registrarProveedor');
+    }
+
+    //metodo que recibe el POST de registrar 
+    public function agregarProveedor(Request $datos){
+      $proveedor= new Proveedor();
+      $proveedor->nombre=$datos->input('nombre');
+      $proveedor->direccion=$datos->input('direccion');
+      $proveedor->telefono=$datos->input('telefono');
+      $proveedor->email_empresa=$datos->input('email_empresa');
+      $proveedor->save();
+
+      //Una vez que guarda regresa al inicio, o puede redireccionar donde estan todos los proveedores
+      return Redirect('/verProveedores');
+    }
+
+
 
 
 
