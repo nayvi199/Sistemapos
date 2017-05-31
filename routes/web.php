@@ -112,9 +112,6 @@ Route::group(['middleware' => 'auth'], function () {
 
 }); */
 
-/*Para diferenciar las rutas del administrador*/
-
-/*Si es un usuario sin iniciar sesion*/
 
 
 
