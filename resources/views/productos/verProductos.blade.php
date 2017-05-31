@@ -64,6 +64,7 @@
           <a href="{{url('/editarProducto')}}/{{$p->id}}" class="btn btn-xs btn-primary">
             <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
           </a>
+           <!-- Modificacion del icono para eliminar, y forma de mandarse con modal para mensaje-->
           <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#modal{{$p->id}}">
             <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
           </button>
