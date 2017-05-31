@@ -12,7 +12,7 @@
                 <form class="form-horizontal" action="{{url('actualizarProducto')}}/{{$producto->id}}" method="POST">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <fieldset>
-                        <legend class="text-center header">Nuevos Datos</legend>
+                        <legend class="text-center header">Nuevos Datos.</legend>
 
                         <div class="form-group">
                             <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
