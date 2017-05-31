@@ -49,10 +49,11 @@
              <li class="treeview">   
                   <a href="#"><i class='fa fa-th'></i> <span>PRODUCTOS</span> <i class="fa fa-angle-left pull-right"></i></a>
                   <ul class="treeview-menu">
-                    <li><a href="{{ url('') }}">Agregar Producto</a></li>
+                    <li><a href="{{ url('verProductos') }}">Ver catalogo </a></li>
+                    <li><a href="{{ url('registrarProducto') }}">Agregar Producto</a></li>
                     <li><a href="{{ url('') }}">Eliminar Producto</a></li>
                 </ul>
-            </li>    
+            </li>     
 
             <li class="treeview"> 
                   <a href="#"><i class='fa fa-users'></i> <span>PROVEEDORES</span> <i class="fa fa-angle-left pull-right"></i></a>
