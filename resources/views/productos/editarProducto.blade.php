@@ -38,6 +38,7 @@
                         <div class="form-group">
                       <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-truck"></i></span>
                       <div class="col-md-8">
+                      <!--Modificando el select para el product id desplegable-->
                         <select name="id_pro" class="form-control" required>
                             <option value="{{$producto->id_pro}}" selected>{{$producto->id_pro}}</option>
                             <option value="1">1</option>
