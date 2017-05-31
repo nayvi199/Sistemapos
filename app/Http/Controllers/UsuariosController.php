@@ -270,6 +270,7 @@ public function buscar_usuario(Request $request){
       }
 
         public function buscar_producto(Request $request){
+          /*Cambiado la forma de llamarse y buscar en referencia*/
   $dato=$request->input("dato_buscado");
   $productos=Producto::where("nombre","like","%".$dato."%")->orwhere("descripcion","like","%".$dato."%")                                              ->paginate(10);
   return view('productos.verProductos')->with("productos",$productos);
