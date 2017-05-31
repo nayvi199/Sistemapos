@@ -92,6 +92,7 @@ class UsuariosController extends Controller
         return view('home', compact('use_rol'));
         }*/
 
+/*Creando seccion de proveedor*/
 
 
 
