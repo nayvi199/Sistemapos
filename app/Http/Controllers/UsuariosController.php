@@ -56,6 +56,12 @@ class UsuariosController extends Controller
       return Redirect('/verProductos');
     }
 
+     public function eliminarProducto($id){
+      $producto=Producto::find($id);
+      $producto->delete();
+      return Redirect('/verProductos');
+    }
+
 /*
 //crear las relaciones para ver por nombre
          public function use_rol($id){
