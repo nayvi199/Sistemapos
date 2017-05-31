@@ -44,6 +44,18 @@ class UsuariosController extends Controller
       return view('productos.registrarProducto');
     }
 
+     public function agregarProducto(Request $datos){
+      $producto= new Producto();
+      $producto->nombre=$datos->input('nombre');
+      $producto->descripcion=$datos->input('descripcion');
+      $producto->precio=$datos->input('precio');
+      $producto->id_pro=$datos->input('id_pro');
+      $producto->save();
+
+      //Una vez que guarda regresa al inicio, o puede redireccionar donde estan todos los proveedores
+      return Redirect('/verProductos');
+    }
+
 /*
 //crear las relaciones para ver por nombre
          public function use_rol($id){
