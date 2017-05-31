@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 23-05-2017 a las 19:55:27
+-- Tiempo de generación: 31-05-2017 a las 02:51:48
 -- Versión del servidor: 10.1.22-MariaDB
 -- Versión de PHP: 7.1.4
 
@@ -106,6 +106,53 @@ INSERT INTO `permission_role` (`id`, `permission_id`, `role_id`, `created_at`, `
 (1, 1, 1, '2017-03-06 04:02:45', '2017-03-06 04:02:45'),
 (2, 2, 1, '2017-03-06 04:03:14', '2017-03-06 04:03:14'),
 (3, 3, 1, '2017-03-06 04:04:12', '2017-03-06 04:04:12');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `productos`
+--
+
+CREATE TABLE `productos` (
+  `id` int(11) NOT NULL,
+  `nombre` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `descripcion` varchar(254) COLLATE utf8_unicode_ci NOT NULL,
+  `precio` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  `id_pro` int(11) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `productos`
+--
+
+INSERT INTO `productos` (`id`, `nombre`, `descripcion`, `precio`, `id_pro`, `created_at`, `updated_at`) VALUES
+(1, 'Laptop Acer E5-511', 'Dispositivo portatil de 15\' Marca Acerr', '7000', 1, '2017-05-29 08:41:04', '2017-05-29 14:41:04'),
+(2, 'Acer SE-435', 'PC de escritorio marca ACER con 16\'', '8000', 1, '2017-05-29 14:16:38', '2017-05-29 14:16:38');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `proveedores`
+--
+
+CREATE TABLE `proveedores` (
+  `id` int(10) NOT NULL,
+  `nombre` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `direccion` varchar(254) COLLATE utf8_unicode_ci NOT NULL,
+  `telefono` varchar(15) COLLATE utf8_unicode_ci NOT NULL,
+  `email_empresa` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `proveedores`
+--
+
+INSERT INTO `proveedores` (`id`, `nombre`, `direccion`, `telefono`, `email_empresa`, `created_at`, `updated_at`) VALUES
+(1, 'DM Tecnologia', 'Aquiles serdan 999', '6671002223', 'dmt1@gmail.com', '2017-05-29 12:25:05', '2017-05-29 13:44:30');
 
 -- --------------------------------------------------------
 
@@ -216,6 +263,19 @@ ALTER TABLE `permission_role`
   ADD KEY `permission_role_role_id_index` (`role_id`);
 
 --
+-- Indices de la tabla `productos`
+--
+ALTER TABLE `productos`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_pro` (`id_pro`);
+
+--
+-- Indices de la tabla `proveedores`
+--
+ALTER TABLE `proveedores`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indices de la tabla `roles`
 --
 ALTER TABLE `roles`
@@ -259,6 +319,16 @@ ALTER TABLE `permissions`
 ALTER TABLE `permission_role`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
+-- AUTO_INCREMENT de la tabla `productos`
+--
+ALTER TABLE `productos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT de la tabla `proveedores`
+--
+ALTER TABLE `proveedores`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
 -- AUTO_INCREMENT de la tabla `roles`
 --
 ALTER TABLE `roles`
@@ -283,6 +353,12 @@ ALTER TABLE `users`
 ALTER TABLE `permission_role`
   ADD CONSTRAINT `permission_role_permission_id_foreign` FOREIGN KEY (`permission_id`) REFERENCES `permissions` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `permission_role_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE;
+
+--
+-- Filtros para la tabla `productos`
+--
+ALTER TABLE `productos`
+  ADD CONSTRAINT `productos_ibfk_1` FOREIGN KEY (`id_pro`) REFERENCES `proveedores` (`id`);
 
 --
 -- Filtros para la tabla `role_user`
