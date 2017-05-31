@@ -60,6 +60,7 @@
           <td>{{$p->precio}}</td>
           <td>{{$p->nombre_pro}}</td>
           <td>
+           <!-- Modificacion del icono para editar-->
           <a href="{{url('/editarProducto')}}/{{$p->id}}" class="btn btn-xs btn-primary">
             <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
           </a>
