@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('htmlheader_title')
-	Editar informacion del Producto
+	Editar informacion del Proveedor
 @endsection
 
 @section('main-content')
@@ -12,7 +12,7 @@
                 <form class="form-horizontal" action="{{url('actualizarProducto')}}/{{$producto->id}}" method="POST">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <fieldset>
-                        <legend class="text-center header">Nuevos Datos.</legend>
+                        <legend class="text-center header">Nuevos Datos</legend>
 
                         <div class="form-group">
                             <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
@@ -23,7 +23,6 @@
                         <div class="form-group">
                             <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-list-alt"></i>></span>
                             <div class="col-md-8">
-                            <!-- Pegando forma de enviar la descripcion del producto-->
                                 <input id="descripcion" name="descripcion" type="text" value="{{$producto->descripcion}}" class="form-control">
                             </div>
                         </div>
@@ -38,7 +37,6 @@
                         <div class="form-group">
                       <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-truck"></i></span>
                       <div class="col-md-8">
-                      <!--Modificando el select para el product id desplegable-->
                         <select name="id_pro" class="form-control" required>
                             <option value="{{$producto->id_pro}}" selected>{{$producto->id_pro}}</option>
                             <option value="1">1</option>
@@ -64,9 +62,7 @@
 
                         <div class="form-group">
                             <div class="col-md-12 text-center">
-                            <!--Cambiando forma de los iconos, editar y cancelar para redireccion-->
                                 <button type="submit" class="btn btn-primary btn-lg">Editar</button>
-                                <!--Modificando redireccion de productos-->
                                 <a href="{{url('/verProductos')}}" class="btn btn-danger btn-lg">Cancelar</a>
                             </div>
                         </div>

@@ -53,12 +53,13 @@
                     <li><a href="{{ url('registrarProducto') }}">Agregar Producto</a></li>
                     <li><a href="{{ url('') }}">Eliminar Producto</a></li>
                 </ul>
-            </li>     
+            </li>    
 
             <li class="treeview"> 
                   <a href="#"><i class='fa fa-users'></i> <span>PROVEEDORES</span> <i class="fa fa-angle-left pull-right"></i></a>
                   <ul class="treeview-menu">
-                    <li><a href="{{ url('') }}">Agregar Proveedor</a></li>
+                    <li><a href="{{ url('verProveedores') }}">Lista de Proveedores</a></li>
+                    <li><a href="{{ url('registrarProveedor') }}">Agregar Proveedor</a></li>
                     <li><a href="{{ url('') }}">Eliminar Proveedor</a></li>
                 </ul>
             </li>
@@ -67,7 +68,7 @@
 
                  <a href="#"><i class='fa fa-users'></i> <span>CANCELACIONES</span> <i class="fa fa-angle-left pull-right"></i></a>
                   <ul class="treeview-menu">
-                    <li><a href="{{ url('') }}">Ver Cancelacionr</a></li>
+                    <li><a href="{{ url('verCancelaciones') }}">Ver Cancelaciones</a></li>
                     <li><a href="{{ url('') }}">r</a></li>
                 </ul>
             </li>    
@@ -163,7 +164,7 @@
 
 
              <li class="treeview">   
-                  <a href="#"><i class='fa fa-th'></i> <span>PRODUCTOS</span> <i class="fa fa-angle-left pull-right"></i></a>
+                  <a href="#"><i class='fa fa-th'></i> <span>COMPRAS</span> <i class="fa fa-angle-left pull-right"></i></a>
                   <ul class="treeview-menu">
                     <li><a href="{{ url('') }}">Ver Productos </a></li>
                     <li><a href="{{ url('') }}">..</a></li>

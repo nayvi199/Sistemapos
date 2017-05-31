@@ -36,7 +36,7 @@
    
 
  
-  <p>A continuacion se presenta la lista y informacion de los productos que estan en nuestra tienda en linea.</p>
+  <p>A continuacion se presenta la lista y informacion de los productos que estan en nuestra tienda en linea. </p>
     
   <table class="table">
     <thead>
@@ -60,14 +60,11 @@
           <td>{{$p->precio}}</td>
           <td>{{$p->nombre_pro}}</td>
           <td>
-           <!-- Modificacion del icono para editar-->
+          <!-- Modificacion del icono para editar-->
           <a href="{{url('/editarProducto')}}/{{$p->id}}" class="btn btn-xs btn-primary">
-           <!-- Cambiar forma del icono editar-->
             <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
           </a>
-           <!-- Modificacion del icono para eliminar, y forma de mandarse con modal para mensaje-->
           <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#modal{{$p->id}}">
-          <!-- Cambiar forma del icono remove-->
             <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
           </button>
          </td>
