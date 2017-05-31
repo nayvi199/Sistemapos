@@ -21,6 +21,26 @@ class UsuariosController extends Controller
   return view("ventas.verVentas");
  }
 
+  /* public function verCancelaciones()
+ {
+  //aqui pones la ventana que sea 
+  //es la carpeta.nombredevista
+  return view("cancelaciones.verCancelaciones");
+ }*/
+
+  public function verProductos()
+ {
+   //aqui pones la ventana que sea 
+    //es la carpeta.nombredevista
+
+    $productos=DB::table('productos')
+    ->join('proveedores', 'productos.id_pro', '=', 'proveedores.id')
+    ->select('productos.*','proveedores.nombre AS nombre_pro')
+    ->paginate(10);
+    //return view("proveedores.verProveedores");
+  return view("productos.verProductos",compact('productos'));
+ }
+
 /*
 //crear las relaciones para ver por nombre
          public function use_rol($id){
