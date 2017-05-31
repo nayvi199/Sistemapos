@@ -93,6 +93,17 @@ class UsuariosController extends Controller
         }*/
 
 /*Creando seccion de proveedor*/
+  public function verProveedores()
+ {
+    //aqui pones la ventana que sea 
+    //es la carpeta.nombredevista
+
+    $proveedores=DB::table('proveedores')
+    ->select('proveedores.*')
+    ->paginate(10);
+    return view('proveedores.verProveedores', compact('proveedores'));
+    //return view("proveedores.verProveedores");
+ }
 
 
 
