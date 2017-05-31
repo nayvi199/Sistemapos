@@ -52,6 +52,7 @@ Route::group(['middleware' => 'auth'], function () {
     //Para las ventas, aqui van las cancelaciones tambien 
     Route::get('verVentas', 'UsuariosController@verVentas');
     Route::get('verProductos', 'UsuariosController@verProductos');
+    Route::get('verProveedores', 'UsuariosController@verProveedores');
 
 
 
