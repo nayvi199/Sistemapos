@@ -71,7 +71,7 @@
                         <input type="password" name="password_confirmation" placeholder="Confirmar Contraseña..." class="form-control" >
                         </div>
 
-                        <<!--Aqui Agregue los otros campos del registro -->>
+                        <!--Aqui Agregue los otros campos del registro -->
                          <div class="form-group">
                             <input type="text" name="" placeholder="Email..." class="form-control"  
                             value="{{ old('email') }}" />
